@@ -13,7 +13,7 @@ struct Student
   int age;
 };
 
-enum Options
+enum Option
 {
   LIST_STUDENTS = 1,
   ADD_STUDENT,

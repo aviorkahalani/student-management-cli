@@ -21,7 +21,7 @@ enum Options
   REMOVE_STUDENT,
   SEARCH_STUDENT,
   SAVE_DATA,
-  LOAD_DATA
+  LOAD_DATA,
 };
 
 // functions declaration

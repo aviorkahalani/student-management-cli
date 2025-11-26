@@ -4,11 +4,7 @@
 
 // macros
 #define BUFFER_SIZE 1024
-
-// functions declaration
-void print_menu(void);
-int read_option(void);
-bool is_valid_option(int option);
+#define ARRAY_SIZE 2
 
 // types
 struct Student
@@ -28,10 +24,16 @@ enum Options
   LOAD_DATA
 };
 
+// functions declaration
+void print_menu(void);
+int read_option(void);
+bool is_valid_option(int option);
+void list_student(struct Student *students, size_t length);
+
 int main(void)
 {
   // create a hard coded student array
-  struct Student students[2] = {
+  struct Student students[ARRAY_SIZE] = {
       {.name = "Avior Kahalani", .age = 27},
       {.name = "Avigail Gilad", .age = 27},
   };
@@ -42,7 +44,7 @@ int main(void)
   switch (option)
   {
   case LIST_STUDENTS:
-    // todo: call list_students function
+    list_student(students, sizeof(students) / sizeof(struct Student));
     break;
   case ADD_STUDENT:
     // todo: call add_student function
@@ -107,4 +109,15 @@ int read_option(void)
 bool is_valid_option(int option)
 {
   return option >= 1 && option <= 7;
+}
+
+void list_student(struct Student *students, size_t length)
+{
+  printf("===========================================\n");
+  for (size_t i = 0; i < length; i++)
+  {
+    struct Student curr_student = students[i];
+    printf("Name: %s, Age: %d\n", curr_student.name, curr_student.age);
+  }
+  printf("===========================================\n");
 }

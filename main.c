@@ -10,9 +10,23 @@ void print_menu(void);
 int read_option(void);
 bool is_valid_option(int option);
 
+// types
+struct Student
+{
+  char name[BUFFER_SIZE];
+  int age;
+};
+
 int main(void)
 {
+  // create a hard coded student array
+  struct Student students[2] = {
+      {.name = "Avior Kahalani", .age = 27},
+      {.name = "Avigail Gilad", .age = 27},
+  };
+
   print_menu();
+  int option = read_option();
 }
 
 void print_menu(void)

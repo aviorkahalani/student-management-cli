@@ -17,6 +17,17 @@ struct Student
   int age;
 };
 
+enum Options
+{
+  LIST_STUDENTS = 1,
+  ADD_STUDENT,
+  UPDATE_STUDENT,
+  REMOVE_STUDENT,
+  SEARCH_STUDENT,
+  SAVE_DATA,
+  LOAD_DATA
+};
+
 int main(void)
 {
   // create a hard coded student array
@@ -27,15 +38,42 @@ int main(void)
 
   print_menu();
   int option = read_option();
+
+  switch (option)
+  {
+  case LIST_STUDENTS:
+    // todo: call list_students function
+    break;
+  case ADD_STUDENT:
+    // todo: call add_student function
+    break;
+  case UPDATE_STUDENT:
+    // todo: call update_student function
+    break;
+  case REMOVE_STUDENT:
+    // todo: call remove_student function
+    break;
+  case SEARCH_STUDENT:
+    // todo: call search_student function
+    break;
+  case SAVE_DATA:
+    // todo: call save_data function
+    break;
+  case LOAD_DATA:
+    // todo: call load_data function
+    break;
+  default:
+    break;
+  }
 }
 
 void print_menu(void)
 {
   printf(
       "Choose an option (1 - 7):\n"
-      "\t1. Add student\n"
-      "\t2. List students\n"
-      "\t3. Search students\n"
+      "\t1. List students\n"
+      "\t2. Add student\n"
+      "\t3. Search student\n"
       "\t4. Update student\n"
       "\t5. Remove student\n"
       "\t6. Save data to file\n"
